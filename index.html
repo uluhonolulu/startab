@@ -387,7 +387,10 @@ fbq('track', 'PageView');</script><!-- End Facebook Pixel Code -->
     document.addEventListener("DOMContentLoaded", function(event) {
       window.referlist.initialize({ domain: 'startab' });
       referlistbutton.addEventListener('click', function() {
-            ga('send', 'event', 'Subscription', 'click', referlistemail.value);
+			gtag('event', 'click', {
+			  'event_category': 'Subscription',
+			  'event_label': referlistemail.value
+			});
         }, false);
     });
   </script>
